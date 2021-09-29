@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.capstoneprototype">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launchermine"
+        android:label="Prison Monitoring System"
+        android:roundIcon="@mipmap/ic_launchermine"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".Settings"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="Settings"
+            android:noHistory="true"
+            android:parentActivityName=".Navigation" />
+        <activity
+            android:name=".ViewProfile"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="Profile"
+            android:parentActivityName=".Navigation" />
+        <activity
+            android:name=".Emergency"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="Emergency Section"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NewUser"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="New User Registration"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Room_Occupied"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="Room_Occupied Status"
+            android:parentActivityName=".Navigation" />
+        <activity
+            android:name=".Monitoring"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="Activity Monitoring"
+            android:parentActivityName=".Navigation" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
